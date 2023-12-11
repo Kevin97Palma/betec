@@ -1,0 +1,91 @@
+.ing-container {
+  margin-left: 16%;
+  border-radius: 20px;
+  width: 80%px;
+  margin-top: 5px;
+}
+
+.ing-container .div-img1 {
+  float: left;
+}
+
+.ing-container .div-img1 img {
+  width: 190px;
+  padding-right: 15px;
+  padding-top: 25px;
+}
+
+.ing-container .div-md p {
+  color: white;
+  font-size: 14px;
+  padding: 20px 0px;
+  text-align: justify;
+}
+
+.ing-container .div-img2 {
+  float: right;
+}
+
+.ing-container .div-img2 img {
+  width: 49%;
+  padding-top: 25px;
+}
+
+@media (max-width: 1200px) {
+  .ing-container .div-md p {
+    font-size: 12px;
+    text-align: justify;
+  }
+  .ing-container .div-img1 img {
+    width: 165%;
+    padding-right: 5px;
+    margin-left: -75px;
+    padding-top: 25px;
+  }
+  .ing-container .div-img2 img {
+    width: 75%;
+    padding-top: 25px;
+    margin-left: -5px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .ing-container .div-md p {
+    font-size: 14px;
+    text-align: justify;
+    padding-right: 135px;
+  }
+  .ing-container .div-img1 img {
+    width: 50%;
+    padding-right: 0px;
+    margin-left: 75px;
+    padding-top: 25px;
+  }
+  .ing-container .div-img2 img {
+    width: 50%;
+    padding-right: 0px;
+    margin-left: 75px;
+    margin-top: -55px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ing-container .div-md p {
+    font-size: 14px;
+    text-align: justify;
+    padding-right: 100px;
+  }
+  .ing-container .div-img1 img {
+    width: 50%;
+    padding-right: 0px;
+    margin-left: 35px;
+    padding-top: 25px;
+  }
+  .ing-container .div-img2 img {
+    width: 50%;
+    padding-right: 0px;
+    margin-left: 28px;
+    padding-top: 25px;
+  }
+}
