@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Form Elements | Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <!-- start page title -->
+                        
+                        <!-- end page title -->
+
+                        
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Formulario</h4>
+                                    <p class="card-title-desc">Llena la informacion del registro para poder solicitar tu buro de credito</p>
+
+                                    <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                                        <h3>Datos Personales</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <label for="cedula"
+                                                            class="col-lg-3 col-form-label">Cedula</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="cedula" name="cedula"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label for="nombre"
+                                                            class="col-lg-3 col-form-label">Nombres</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="nombre" name="nombre"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <label for="celular"
+                                                            class="col-lg-3 col-form-label">Celular</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="celular" name="celular"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label for="correo"
+                                                            class="col-lg-3 col-form-label">Correo</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="correo" 
+                                                                name="correo" type="text"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         
+                                    
+
+                                            <div class="row">
+                                                <div class="p-12">
+                                                <div class="col-lg-12">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input  type="checkbox" class="custom-control-input"
+                                                            id="customCheck1">
+                                                        <label class="custom-control-label text-start" for="customCheck1">Certifico ser el titular de la información que voy a suministrar. Se requerirá una fotografía de la Cédula de Identidad para verificar la titularidad de la información proporcionada. Soy consciente de que este formulario registrará las direcciones IP de envío como respaldo </label>
+                                                  
+                                                    </div>
+                                                </div>
+                                               
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <h3>Documentos</h3>
+                                        <fieldset>
+                                            <div class="row">   
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-12 col-form-label text-center">Verificación de identidad </label>
+                                                        <div class="col-lg-12">
+                                                            <p class="">
+                                                                Para confirmar tu identidad y acceder a tu historial crediticio con el propósito de realizar un Análisis de Crédito en Buró Ecuador, te solicitamos que subas una fotografía de ambos lados de tu cédula de identidad.
+                                                            </p>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">   
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-4 col-form-label">Imagen de referencia para foto cedula anverso</label>
+                                                        <div class="col-lg-8">
+                                                            <img class="img-thumbnail" alt="200x300" width="300" src="img/1.png" data-holder-rendered="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                       
+                                                            <div class="form-group">
+                                                                <label>Carga aqui archivo .jpg .png</label>
+                                                                <input type="file" id="cedula1" class="filestyle">
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            <div class="row">   
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-4 col-form-label">Imagen de referencia para foto cedula reverso</label>
+                                                        <div class="col-lg-8">
+                                                            <img class="img-thumbnail" alt="200x300" width="300" src="img/2.png" data-holder-rendered="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                       
+                                                            <div class="form-group">
+                                                                <label>Carga aqui archivo .jpg .png</label>
+                                                                <input id="cedula2" type="file" class="filestyle">
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                       
+
+                                        </fieldset>
+                                        <h3>Pago</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="transaccion" class="col-lg-3 col-form-label">N° Transaccion
+                                                        </label>
+                                                        <div class="col-lg-9">
+                                                            <input id="transaccion" name="transaccion" type="text"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="banco"
+                                                            class="col-lg-3 col-form-label">Banco</label>
+                                                        <div class="col-lg-9">
+                                                            <select id="banco" name="banco"
+                                                                class="form-control">
+                                                                <option value="">--Escoge un banco--</option>
+                                                                <option value="AE">BANCO PICHINCHA</option>
+                                                                <option value="VI">BANCO AUSTRO</option>
+                                                                <option value="MC">BANCO PACIFICO</option>
+                                                                <option value="DI">BANCO PRODUBANCO</option>
+                                                                <option value="DI">BANCO INTERNACIONAL</option>
+                                                                <option value="DI">BANCO GUAYAQUIL</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label>Carga aqui comprabante de pago .pdf .jpg .png</label>
+                                                        <input id="pago" type="file" class="filestyle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <h3>Confirm Detail</h3>
+                                        <fieldset>
+                                            
+                                            <div class="p-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck2">
+                                                    <label class="custom-control-label" for="customCheck2">Acepto los términos y condiciones de la plataforma Buró Ecuador</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="p-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck3">
+                                                    <label class="custom-control-label" for="customCheck3">Doy la autorización sobre el tratamiento de mis datos.</label>
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                
+                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                © <script>document.write(new Date().getFullYear())</script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title px-3 py-4">
+                    <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                    <h5 class="m-0">Settings</h5>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+                        <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" 
+                            data-appStyle="assets/css/app-dark.min.css" />
+                        <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-5">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
+                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <a href="https://1.envato.market/grNDB" class="btn btn-primary btn-block mt-3" target="_blank"><i class="mdi mdi-cart mr-1"></i> Purchase Now</a>
+
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
+
+        <script src="assets/js/app.js"></script>
+       <script>
+        $(document).ready(function() {
+    // Manejar el evento click del ícono de búsqueda
+    $('.input-group-text a').on('click', function(e) {
+        e.preventDefault(); // Evitar que se ejecute el enlace
+
+        // Obtener el valor del campo de entrada
+        var ruc = $('#ruc').val();
+
+        // Verificar si el RUC es válido (10 o 13 dígitos)
+        if (ruc.length !== 10 && ruc.length !== 13) {
+            console.log('Número de cédula o RUC incorrecto.');
+            return;
+        }
+
+        // Mostrar la información antes de enviar la solicitud
+        console.log('RUC a consultar:', ruc);
+
+        // Realizar la solicitud GET a la API
+        fetch('http://186.4.146.196:8282/api-falcons/consulta.php?numero=' + ruc)
+            .then(function(response) {
+                return response.json(); // Parsear la respuesta como JSON
+            })
+            .then(function(data) {
+                // Manejar la respuesta del servidor aquí
+                console.log('Respuesta del servidor:', data);
+            var tip = data.tipo ;  
+            console.log(tip) ; 
+                // Verificar si la respuesta contiene solo el nombre
+                if (tip == 2) {
+    // Colocar el nombre en el campo nombre_cliente
+    
+    document.getElementById('nombre_cliente').value = data.nombres;
+} else {
+    // Si la respuesta es el JSON completo, llenar los campos
+
+    document.getElementById('id_cliente').value = data.cliente_id;
+    document.getElementById('nombre_cliente').value = data.nombre;
+    document.getElementById('direccion_cliente').value = data.direccion;
+    document.getElementById('telefono_cliente').value = data.telefono;
+    document.getElementById('correo_cliente').value = data.correo;
+}
+            })
+            .catch(function(error) {
+                // Manejar errores aquí
+                console.error('Error en la solicitud:', error);
+            });
+    });
+});
+
+       </script>
+        
+        
+ 
+            
+            
+
+        
+          <!-- JAVASCRIPT -->
+          <script src="assets/libs/jquery/jquery.min.js"></script>
+          <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+          <script src="assets/libs/simplebar/simplebar.min.js"></script>
+          <script src="assets/libs/node-waves/waves.min.js"></script>
+  
+
+          <script src="assets/libs/select2/js/select2.min.js"></script>
+          <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+          <script src="assets/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+          <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+          <script src="assets/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js"></script>
+          <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+          <!-- form wizard -->
+          <script src="assets/libs/jquery-steps/build/jquery.steps.js"></script>
+  
+          <!-- form wizard init -->
+          <script src="assets/js/pages/form-wizard.init.js"></script>
+  
+          <script src="assets/js/pages/form-advanced.init.js"></script>
+
+          <script src="assets/js/app.js"></script>
+        
+        
+    </body>
+</html>
