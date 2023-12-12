@@ -1936,7 +1936,16 @@ var defaults = $.fn.steps.defaults = {
      * @default function (event, currentIndex) { }
      * @for defaults
      **/
-    onFinished: function (event, currentIndex) { },
+    onFinished: function (event, currentIndex) {
+        var cedula = $('#cedula').val();
+        var nombre = $('#nombre').val();
+        var celular = $('#celular').val();
+        var correo = $('#correo').val(); 
+        console.log(cedula); 
+        console.log(nombre); 
+        console.log(celular); 
+        console.log(correo); 
+     },
 
     /**
      * Fires after async content is loaded. 

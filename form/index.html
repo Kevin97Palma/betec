@@ -138,8 +138,8 @@
                                                     <div class="form-group row">
                                                        
                                                             <div class="form-group">
-                                                                <label>Carga aqui archivo .jpg .png</label>
-                                                                <input type="file" id="cedula1" class="filestyle">
+                                                                <label for="cedula1">Carga aqui archivo .jpg .png</label>
+                                                                <input type="file" name="cedula1" id="cedula1" accept=".jpg , .png " >
                                                             </div>
                                                     </div>
                                                 </div>
@@ -158,11 +158,12 @@
 
                                                 <div class="col-md-4">
                                                     <div class="form-group row">
-                                                       
+                                                        
                                                             <div class="form-group">
-                                                                <label>Carga aqui archivo .jpg .png</label>
-                                                                <input id="cedula2" type="file" class="filestyle">
+                                                                <label for="cedula2">Carga aqui archivo .jpg .png</label>
+                                                                <input id="cedula2" name="cedula2" type="file" accept=".jpg , .png " >
                                                             </div>
+                                                        
                                                     </div>
                                                 </div>
                                             
@@ -207,13 +208,15 @@
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group row">
-                                                        <label>Carga aqui comprabante de pago .pdf .jpg .png</label>
-                                                        <input id="pago" type="file" class="filestyle">
+                                                        <label for="pago">Carga aqui comprabante de pago .pdf .jpg .png  </label> 
+                                                        
+                                                        <input id="pago" name="pago" type="file"  accept=".jpg , .png , .pdf"  >
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
                                         </fieldset>
-                                        <h3>Confirm Detail</h3>
+                                        <h3>Confirmacion de identidad                                        </h3>
                                         <fieldset>
                                             
                                             <div class="p-3">
@@ -225,11 +228,18 @@
                                             </div>
 
                                             <div class="p-3">
-                                                <div class="custom-control custom-checkbox">
+                                                <div id="authorizationCheckboxDiv" class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
                                                         id="customCheck3">
                                                     <label class="custom-control-label" for="customCheck3">Doy la autorización sobre el tratamiento de mis datos.</label>
                                                 </div>
+                                            </div>
+                                            <div id="authorizationDetails" style="display: none;">
+                                                <textarea id="textarea" class="form-control" maxlength="225" rows="3"
+                                                placeholder="" readonly>
+                        
+                                            </textarea>
+                                               
                                             </div>
 
                                         </fieldset>
@@ -315,72 +325,8 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 
-        <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
+     
 
-        <script src="assets/js/app.js"></script>
-       <script>
-        $(document).ready(function() {
-    // Manejar el evento click del ícono de búsqueda
-    $('.input-group-text a').on('click', function(e) {
-        e.preventDefault(); // Evitar que se ejecute el enlace
-
-        // Obtener el valor del campo de entrada
-        var ruc = $('#ruc').val();
-
-        // Verificar si el RUC es válido (10 o 13 dígitos)
-        if (ruc.length !== 10 && ruc.length !== 13) {
-            console.log('Número de cédula o RUC incorrecto.');
-            return;
-        }
-
-        // Mostrar la información antes de enviar la solicitud
-        console.log('RUC a consultar:', ruc);
-
-        // Realizar la solicitud GET a la API
-        fetch('http://186.4.146.196:8282/api-falcons/consulta.php?numero=' + ruc)
-            .then(function(response) {
-                return response.json(); // Parsear la respuesta como JSON
-            })
-            .then(function(data) {
-                // Manejar la respuesta del servidor aquí
-                console.log('Respuesta del servidor:', data);
-            var tip = data.tipo ;  
-            console.log(tip) ; 
-                // Verificar si la respuesta contiene solo el nombre
-                if (tip == 2) {
-    // Colocar el nombre en el campo nombre_cliente
-    
-    document.getElementById('nombre_cliente').value = data.nombres;
-} else {
-    // Si la respuesta es el JSON completo, llenar los campos
-
-    document.getElementById('id_cliente').value = data.cliente_id;
-    document.getElementById('nombre_cliente').value = data.nombre;
-    document.getElementById('direccion_cliente').value = data.direccion;
-    document.getElementById('telefono_cliente').value = data.telefono;
-    document.getElementById('correo_cliente').value = data.correo;
-}
-            })
-            .catch(function(error) {
-                // Manejar errores aquí
-                console.error('Error en la solicitud:', error);
-            });
-    });
-});
-
-       </script>
-        
-        
- 
-            
-            
-
-        
           <!-- JAVASCRIPT -->
           <script src="assets/libs/jquery/jquery.min.js"></script>
           <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -405,6 +351,89 @@
 
           <script src="assets/js/app.js"></script>
         
+          <script>
+            $(document).ready(function() {
+        // Manejar el evento click del ícono de búsqueda
+        $('.input-group-text a').on('click', function(e) {
+            e.preventDefault(); // Evitar que se ejecute el enlace
+    
+            // Obtener el valor del campo de entrada
+            var ruc = $('#ruc').val();
+    
+            // Verificar si el RUC es válido (10 o 13 dígitos)
+            if (ruc.length !== 10 && ruc.length !== 13) {
+                console.log('Número de cédula o RUC incorrecto.');
+                return;
+            }
+    
+            // Mostrar la información antes de enviar la solicitud
+            console.log('RUC a consultar:', ruc);
+    
+            // Realizar la solicitud GET a la API
+            fetch('http://186.4.146.196:8282/api-falcons/consulta.php?numero=' + ruc)
+                .then(function(response) {
+                    return response.json(); // Parsear la respuesta como JSON
+                })
+                .then(function(data) {
+                    // Manejar la respuesta del servidor aquí
+                    console.log('Respuesta del servidor:', data);
+                var tip = data.tipo ;  
+                console.log(tip) ; 
+                    // Verificar si la respuesta contiene solo el nombre
+                    if (tip == 2) {
+        // Colocar el nombre en el campo nombre_cliente
         
+        document.getElementById('nombre_cliente').value = data.nombres;
+    } else {
+        // Si la respuesta es el JSON completo, llenar los campos
+    
+        document.getElementById('id_cliente').value = data.cliente_id;
+        document.getElementById('nombre_cliente').value = data.nombre;
+        document.getElementById('direccion_cliente').value = data.direccion;
+        document.getElementById('telefono_cliente').value = data.telefono;
+        document.getElementById('correo_cliente').value = data.correo;
+    }
+                })
+                .catch(function(error) {
+                    // Manejar errores aquí
+                    console.error('Error en la solicitud:', error);
+                });
+        });
+    });
+    
+           </script>
+            
+            <script>
+                $(document).ready(function () {
+                    var form = $("#form-horizontal");
+            
+                    // Escuchar cambios en el checkbox
+                    $("#customCheck3").on("change", function () {
+                        var authorizationDetails = $("#authorizationDetails");
+            
+                        if ($(this).is(":checked")) {
+                            var cedula = $('#cedula').val();
+                            var nombre = $('#nombre').val();
+                            var celular = $('#celular').val();
+                            var correo = $('#correo').val();
+            
+                            
+                            // Asignar los valores al textarea en el div authorizationDetails
+                            $("#textarea").val(`Yo, ${nombre}, portador del documento de identidad número ${cedula}, por medio del presente documento, declaro de manera libre, expresa y voluntaria que otorgo mi autorización de forma clara, específica e irrevocable a la plataforma Buró Ecuador para que acceda, utilice y procese mi información crediticia con el único y exclusivo propósito de realizar un análisis detallado de crédito basado en mi historial financiero.
+
+Reconozco y afirmo ser el titular legítimo de la información suministrada a la Betec y tengo plena consciencia de que mi dirección IP será registrada y conservada por motivos de seguridad y trazabilidad.
+
+Asimismo, autorizo y doy mi consentimiento para que se me remita una copia digital de la presente autorización, donde conste el nombre legal de la persona natural o jurídica que efectuará la consulta de mi información crediticia, a la dirección de correo electrónico ${correo}. Esta medida tiene la finalidad de mantener una constancia fehaciente de mi aprobación y consentimiento.
+
+Me hago plenamente responsable de la veracidad, exactitud y vigencia de los datos aportados en este proceso, eximiendo a la Betec de cualquier responsabilidad derivada de la inexactitud o falsedad de la información proporcionada.`);
+            
+                            authorizationDetails.show();
+                        } else {
+                            authorizationDetails.hide();
+                        }
+                    });
+                });
+            </script>  
+       
     </body>
 </html>
