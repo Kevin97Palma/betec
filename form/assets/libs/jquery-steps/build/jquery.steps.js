@@ -1937,14 +1937,96 @@ var defaults = $.fn.steps.defaults = {
      * @for defaults
      **/
     onFinished: function (event, currentIndex) {
-        var cedula = $('#cedula').val();
-        var nombre = $('#nombre').val();
-        var celular = $('#celular').val();
-        var correo = $('#correo').val(); 
-        console.log(cedula); 
-        console.log(nombre); 
-        console.log(celular); 
-        console.log(correo); 
+// Validar los campos
+var cedula = document.getElementById("cedula").value;
+var nombre = document.getElementById("nombre").value;
+var celular = document.getElementById("celular").value;
+var correo = document.getElementById("correo").value;
+var cedula1File = document.getElementById("cedula1").files[0];
+var cedula2File = document.getElementById("cedula2").files[0];
+var transaccion = document.getElementById("transaccion").value;
+var banco = document.getElementById("banco").value;
+var pagoFile = document.getElementById("pago").files[0];
+var customCheck1 = document.getElementById("customCheck1").checked;
+var customCheck2 = document.getElementById("customCheck2").checked;
+var customCheck3 = document.getElementById("customCheck3").checked;
+
+// Array para almacenar los campos que faltan
+var camposFaltantes = [];
+
+// Verificar si algún campo obligatorio está vacío
+if (!cedula) camposFaltantes.push("Cédula");
+if (!nombre) camposFaltantes.push("Nombre");
+if (!celular) camposFaltantes.push("Celular");
+if (!correo) camposFaltantes.push("Correo");
+if (!transaccion) camposFaltantes.push("Número de Transacción");
+if (!banco) camposFaltantes.push("Banco");
+if (!pagoFile) camposFaltantes.push("Comprobante de Pago");
+if (!customCheck2) camposFaltantes.push("Acepta Términos y Condiciones");
+if (!customCheck3) camposFaltantes.push("Autorización de Datos");
+
+// Mensaje de error para campos obligatorios no llenos
+var errorMessage = "Por favor, completa los siguientes campos obligatorios: " + camposFaltantes.join(", ");
+
+// Verificar si hay campos faltantes
+if (camposFaltantes.length > 0) {
+    alert(errorMessage);
+} else {
+    // Crear un objeto FormData para enviar archivos
+    var formData = new FormData();
+    formData.append("cedula", cedula);
+    formData.append("nombre", nombre);
+    formData.append("celular", celular);
+    formData.append("correo", correo);
+    formData.append("cedula1", cedula1File);
+    formData.append("cedula2", cedula2File);
+    formData.append("transaccion", transaccion);
+    formData.append("banco", banco);
+    formData.append("pago", pagoFile);
+    formData.append("customCheck1", customCheck1);
+    formData.append("customCheck2", customCheck2);
+    formData.append("customCheck3", customCheck3);
+
+ // Imprimir los valores en la consola
+ console.log("Cedula:", cedula);
+ console.log("Nombre:", nombre);
+ console.log("Celular:", celular);
+ console.log("Correo:", correo);
+ console.log("Cedula1 File:", cedula1File);
+ console.log("Cedula2 File:", cedula2File);
+ console.log("Transaccion:", transaccion);
+ console.log("Banco:", banco);
+ console.log("Pago File:", pagoFile);
+ console.log("CustomCheck1:", customCheck1);
+ console.log("CustomCheck2:", customCheck2);
+ console.log("CustomCheck3:", customCheck3);
+
+    // Crear un objeto XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+
+    // Configurar la solicitud
+    xhr.open("POST", "./api/insert.php", true);
+
+    // Escuchar el evento de carga
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // La solicitud fue exitosa
+            console.log("Respuesta exitosa:", xhr.responseText);
+        } else {
+            // La solicitud falló
+            console.error("Error al enviar datos a la API:", xhr.statusText);
+        }
+    };
+
+    // Escuchar el evento de error
+    xhr.onerror = function () {
+        console.error("Error de red al enviar datos a la API");
+    };
+
+    // Enviar la solicitud con los datos del formulario
+    xhr.send(formData);
+}
+
      },
 
     /**
