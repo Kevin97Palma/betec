@@ -1951,6 +1951,7 @@ var customCheck1 = document.getElementById("customCheck1").checked;
 var customCheck2 = document.getElementById("customCheck2").checked;
 var customCheck3 = document.getElementById("customCheck3").checked;
 
+ 
 // Array para almacenar los campos que faltan
 var camposFaltantes = [];
 
@@ -1962,8 +1963,9 @@ if (!correo) camposFaltantes.push("Correo");
 if (!transaccion) camposFaltantes.push("Número de Transacción");
 if (!banco) camposFaltantes.push("Banco");
 if (!pagoFile) camposFaltantes.push("Comprobante de Pago");
+if (!customCheck1) camposFaltantes.push("Acepta que eres el titular de los datos");
 if (!customCheck2) camposFaltantes.push("Acepta Términos y Condiciones");
-if (!customCheck3) camposFaltantes.push("Autorización de Datos");
+if (!customCheck3) camposFaltantes.push("Acepta la autorización de Datos Personales");
 
 // Mensaje de error para campos obligatorios no llenos
 var errorMessage = "Por favor, completa los siguientes campos obligatorios: " + camposFaltantes.join(", ");
@@ -2010,8 +2012,14 @@ if (camposFaltantes.length > 0) {
     // Escuchar el evento de carga
     xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
-            // La solicitud fue exitosa
-            console.log("Respuesta exitosa:", xhr.responseText);
+          // La solicitud fue exitosa
+        console.log("Respuesta exitosa:", xhr.responseText);
+       // Swal.fire("Registro exitoso. Se ha enviado la información correctamente.", "", "success");
+        // Mostrar un mensaje al usuario
+       alert("Registro exitoso. Se ha enviado la información correctamente.");
+
+        // Recargar la página
+       window.location.reload();
         } else {
             // La solicitud falló
             console.error("Error al enviar datos a la API:", xhr.statusText);
