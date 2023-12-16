@@ -72,3 +72,14 @@ function cargarDatos(estadoId) {
         console.error('Error al obtener datos:', error);
     });
 }
+// Función para abrir un modal
+function abrirModal(id) {
+    // Implementa la lógica para abrir el modal según el ID
+    console.log(`Abrir modal para el ID ${id}`);
+}
+
+// Función para eliminar un registro
+function eliminarRegistro(id) {
+    // Implementa la lógica para eliminar el registro según el ID
+    console.log(`Eliminar registro con ID ${id}`);
+}
