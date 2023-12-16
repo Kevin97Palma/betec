@@ -14,6 +14,9 @@ $(document).ready(function() {
             table.clear().draw(); // Limpia la tabla antes de agregar nuevos datos
 
             data.registros.forEach(registro => {
+                // Determina el color del alert según el estado
+                var alertColor = registro.estado === 'En Proceso' ? 'success' : 'danger';
+
                 // Agrega cada registro como una fila en la tabla
                 table.row.add([
                     registro.id,
@@ -22,7 +25,7 @@ $(document).ready(function() {
                     registro.celular,
                     registro.correo,
                     `
-                        <p class="alert alert-success" role="alert">${registro.estado}</p> <!-- Aquí muestra el estado -->
+                        <p class="alert alert-${alertColor}" role="alert">${registro.estado}</p> <!-- Aquí muestra el estado -->
                     `,
                     // Agrega los botones en la nueva columna
                     `<button type="button" class="btn btn-primary" onclick="abrirModal(${registro.id})">Editar</button>
