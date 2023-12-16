@@ -21,7 +21,9 @@ $(document).ready(function() {
                     registro.nombre,
                     registro.celular,
                     registro.correo,
-                    registro.estado,
+                    `
+                        <p class="alert alert-success" role="alert">${registro.estado}</p> <!-- Aquí muestra el estado -->
+                    `,
                     // Agrega los botones en la nueva columna
                     `<button type="button" class="btn btn-primary" onclick="abrirModal(${registro.id})">Editar</button>
                      <button type="button" class="btn btn-danger" onclick="eliminarRegistro(${registro.id})">Eliminar</button>`
