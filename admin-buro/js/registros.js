@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Llama a tu API inicialmente sin parámetros
     cargarDatos();
 
     // Agrega un evento de clic a los elementos del menú
-    $('#e1, #e2, #e3').on('click', function(e) {
+    $('#e1, #e2, #e3').on('click', function (e) {
         // Previene el comportamiento predeterminado del enlace
         e.preventDefault();
-        
+
         // Obtiene el ID del elemento clicado
         var estadoId = $(this).attr('id').substring(1);
 
@@ -35,42 +35,42 @@ function cargarDatos(estadoId) {
             'Content-Type': 'application/json'
         },
     })
-    .then(response => {
-        // Muestra la respuesta de la API
-        console.log('Respuesta de la API:', response);
-        return response.json();
-    })
-    .then(data => {
-        // Muestra los datos devueltos por la API
-        console.log('Datos recibidos:', data);
+        .then(response => {
+            // Muestra la respuesta de la API
+            console.log('Respuesta de la API:', response);
+            return response.json();
+        })
+        .then(data => {
+            // Muestra los datos devueltos por la API
+            console.log('Datos recibidos:', data);
 
-        // Manipula los datos y llena la tabla
-        if (data.registros && data.registros.length > 0) {
-            var table = $('#datatable-buttons').DataTable();
-            table.clear().draw(); // Limpia la tabla antes de agregar nuevos datos
+            // Manipula los datos y llena la tabla
+            if (data.registros && data.registros.length > 0) {
+                var table = $('#datatable-buttons').DataTable();
+                table.clear().draw(); // Limpia la tabla antes de agregar nuevos datos
 
-            data.registros.forEach(registro => {
-                // Agrega cada registro como una fila en la tabla
-                table.row.add([
-                    registro.id,
-                    registro.cedula,
-                    registro.nombre,
-                    registro.celular,
-                    registro.correo,
-                    `
-                        <p class="alert alert-${obtenerColorAlerta(registro.estado)}" role="alert">${registro.estado}</p>
+                data.registros.forEach(registro => {
+                    // Agrega cada registro como una fila en la tabla
+                    table.row.add([
+                        registro.id,
+                        registro.cedula,
+                        registro.nombre,
+                        registro.celular,
+                        registro.correo,
+                        `
+                    <span class="badge-${obtenerColorAlerta(registro.estado)} badge mr-2">${registro.estado}</span>
                     `,
-                    // Agrega los botones en la nueva columna
-                    `<button type="button" class="btn btn-primary" onclick="abrirModal(${registro.id})">Editar</button>
+                        // Agrega los botones en la nueva columna
+                        `<button type="button" class="btn btn-primary" onclick="abrirModal(${registro.id})">Editar</button>
                      <button type="button" class="btn btn-danger" onclick="eliminarRegistro(${registro.id})">Eliminar</button>`
-                ]).draw();
-            });
-        }
-    })
-    .catch(error => {
-        // Muestra errores en la consola
-        console.error('Error al obtener datos:', error);
-    });
+                    ]).draw();
+                });
+            }
+        })
+        .catch(error => {
+            // Muestra errores en la consola
+            console.error('Error al obtener datos:', error);
+        });
 }
 
 // Función para abrir un modal y cargar datos desde la API
@@ -88,46 +88,91 @@ function abrirModal(id) {
             'Content-Type': 'application/json'
         },
     })
-    .then(response => {
-        // Muestra la respuesta de la API
-        console.log('Respuesta de la API:', response);
-        return response.json();
-    })
-    .then(data => {
-        // Muestra los datos devueltos por la API
-        console.log('Datos recibidos:', data);
+        .then(response => {
+            // Muestra la respuesta de la API
+            console.log('Respuesta de la API:', response);
+            return response.json();
+        })
+        .then(data => {
+            // Muestra los datos devueltos por la API
+            console.log('Datos recibidos:', data);
 
-        // Llena el modal con los datos recibidos
-        llenarModal(data);
-        
-        // Abre el modal
-        $('#myModal').modal('show');
-    })
-    .catch(error => {
-        // Muestra errores en la consola
-        console.error('Error al obtener datos:', error);
-    });
+            // Llena el modal con los datos recibidos
+            llenarModal(data);
+
+            // Abre el modal
+            $('#myModal').modal('show');
+        })
+        .catch(error => {
+            // Muestra errores en la consola
+            console.error('Error al obtener datos:', error);
+        });
 }
 
 // Función para llenar el contenido del modal con datos
 function llenarModal(data) {
+
+
     // Modifica el contenido del modal según los datos recibidos
-    $('#myModalLabel').text(data.registros[0].nombre); // Cambia el título del modal
+    $('#myModalLabel').text('CLIENTE ' + data.registros[0].nombre); // Cambia el título del modal
 
     // Construye el contenido del cuerpo del modal
     var modalContent = `
-        <p>ID: ${data.registros[0].id}</p>
-        <p>Cédula: ${data.registros[0].cedula}</p>
-        <p>Correo: ${data.registros[0].correo}</p>
-        <p>Estado: ${data.registros[0].nombre_estado}</p>
-        <p>Fecha de Creación: ${data.registros[0].created_at}</p>
-        <p>Código TR: ${data.registros[0].codigoTr}</p>
-        <p>Banco: ${data.registros[0].banco}</p>
-        <!-- Agrega más campos según tus necesidades -->
-        <p>Imagen Cédula Anverso: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_anverso}" target="_blank">Ver Comprobante</a></p>
-        <p>Imagen Cédula Reverso: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_reverso}" target="_blank">Ver Comprobante</a></p>
-        <p>Comprobante de Pago: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_comprobante_pago}" target="_blank">Ver Comprobante</a></p>
-    `;
+    <div class="card">
+    
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-selected="true">
+                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                    <span class="d-none d-sm-block">Informacion</span>    
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-selected="false">
+                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                    <span class="d-none d-sm-block">Editar</span>    
+                </a>
+            </li>
+          
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane p-3 active" id="home" role="tabpanel">
+                <p class="mb-0">
+                <b> Registro: </b> ${data.registros[0].id}<br>
+                <b>Cédula: </b> ${data.registros[0].cedula} <br>
+                <b>Correo: </b> ${data.registros[0].correo} <br>
+                <b>Estado:</b>  <span class="badge-primary badge mr-2">${data.registros[0].nombre_estado}</span> <br>
+                <b>Fecha de Creación: </b> ${data.registros[0].created_at} <br>
+                <b>Código TR: </b> ${data.registros[0].codigoTr} <br>
+                <b>Banco: </b> ${data.registros[0].banco} <br>
+                <b>Imagen Cédula Anverso:</b>  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_anverso}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a> <br>
+                <b>Imagen Cédula Reverso:</b>  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_reverso}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a> <br>
+                <b>Comprobante de Pago:</b>  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_comprobante_pago}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a>
+                </p>
+            </div>
+            <div class="tab-pane p-3" id="profile" role="tabpanel">
+                <p class="mb-0">
+                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                    single-origin coffee squid. Exercitation +1 labore velit, blog
+                    sartorial PBR leggings next level wes anderson artisan four loko
+                    farm-to-table craft beer twee. Qui photo booth letterpress,
+                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                    aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr,
+                    vero magna velit sapiente labore stumptown. Vegan fanny pack
+                    odio cillum wes anderson 8-bit.
+                </p>
+            </div>
+           
+          
+        </div>
+
+   
+</div>
+        `;
 
     // Llena el contenido del cuerpo del modal
     $('.modal-body').html(modalContent);

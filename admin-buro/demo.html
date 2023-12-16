@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#informacion" role="tab" aria-selected="true">
+                                                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                                    <span class="d-none d-sm-block">Informacion</span>    
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#editar" role="tab" aria-selected="false">
+                                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                                    <span class="d-none d-sm-block">Editar</span>    
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div class="tab-pane p-3 active" id="informacion" role="tabpanel">
+                                                <p class="mb-0">
+                                                 <b> Registro: </b> ${data.registros[0].id}<br>
+        <b>Cédula: </b> ${data.registros[0].cedula} <br>
+        <b>Correo: </b> ${data.registros[0].correo} <br>
+        <b>Estado:</b>  <span class="badge-primary badge mr-2">${data.registros[0].nombre_estado}</span> <br>
+        <b>Fecha de Creación: </b> ${data.registros[0].created_at} <br>
+        <b>Código TR: </b> ${data.registros[0].codigoTr} <br>
+        <b>Banco: </b> ${data.registros[0].banco} <br>
+        <b>Imagen Cédula Anverso:  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_anverso}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a> <br>
+        <b>Imagen Cédula Reverso:  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_reverso}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a> <br>
+        <b>Comprobante de Pago:  <a type="button" href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_comprobante_pago}" class="badge-info badge mr-2" target="_blank"><i class="fa fa-inbox"></i> Descargar</a></p>
+                                            </div>
+                                            <div class="tab-pane p-3" id="editar" role="tabpanel">
+                                                <p class="mb-0">
+                                                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                                                    single-origin coffee squid. Exercitation +1 labore velit, blog
+                                                    sartorial PBR leggings next level wes anderson artisan four loko
+                                                    farm-to-table craft beer twee. Qui photo booth letterpress,
+                                                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                                                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                                                    aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr,
+                                                    vero magna velit sapiente labore stumptown. Vegan fanny pack
+                                                    odio cillum wes anderson 8-bit.
+                                                </p>
+                                            </div>
+                                         
+                                          
+                                        </div>
+        
+                                    </div>
+    </div>
+        
