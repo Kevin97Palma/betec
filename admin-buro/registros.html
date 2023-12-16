@@ -12,6 +12,12 @@
 
         <link href="assets/libs/chartist/chartist.min.css" rel="stylesheet">
 
+          <!-- DataTables -->
+          <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+          <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+  
+          <!-- Responsive datatable examples -->
+          <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />    
         <!-- Bootstrap Css -->
         <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -280,176 +286,36 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div class="float-right d-none d-md-block">
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle waves-effect waves-light"
-                                            type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-settings mr-2"></i> Settings
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         
                         </div>
                         <!-- end page title -->
 
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/01.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Orders</h5>
-                                            <h4 class="font-weight-medium font-size-24">1,685 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-success">
-                                                <p class="mb-0">+ 12%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
+                     
 
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/02.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Revenue</h5>
-                                            <h4 class="font-weight-medium font-size-24">52,368 <i
-                                                    class="mdi mdi-arrow-down text-danger ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-danger">
-                                                <p class="mb-0">- 28%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/03.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Average Price</h5>
-                                            <h4 class="font-weight-medium font-size-24">15.8 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-info">
-                                                <p class="mb-0"> 00%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/04.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Product Sold</h5>
-                                            <h4 class="font-weight-medium font-size-24">2436 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-warning">
-                                                <p class="mb-0">+ 84%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- end row -->
-
                         <div class="row">
-                            <div class="col-xl-9">
+                            <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-4">Monthly Earning</h4>
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div>
-                                                    <div id="chart-with-area" class="ct-chart earning ct-golden-section">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">This month</p>
-                                                            <h3>$34,252</h3>
-                                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                                will be occidental.</p>
-                                                            <span class="peity-donut"
-                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                data-width="72" data-height="72">4/5</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">Last month</p>
-                                                            <h3>$36,253</h3>
-                                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                                will be occidental.</p>
-                                                            <span class="peity-donut"
-                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                data-width="72" data-height="72">3/5</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end row -->
+                                        <!-- Agrega una tabla con un ID -->
+                                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Cédula</th>
+                                                    <th>Nombre</th>
+                                                    <th>Celular</th>
+                                                    <th>Correo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Los datos se llenarán dinámicamente aquí -->
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <!-- end card -->
                             </div>
-
-                            
                         </div>
-                        <!-- end row -->
-
-                     
                         <!-- end row -->
 
                         <!-- end row -->
@@ -547,6 +413,26 @@
 
         <script src="assets/js/app.js"></script>
 
+           <!-- Required datatable js -->
+           <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+           <script src="assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+           <!-- Buttons examples -->
+           <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+           <script src="assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+           <script src="assets/libs/jszip/jszip.min.js"></script>
+           <script src="assets/libs/pdfmake/build/pdfmake.min.js"></script>
+           <script src="assets/libs/pdfmake/build/vfs_fonts.js"></script>
+           <script src="assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+           <script src="assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+           <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+           <!-- Responsive examples -->
+           <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+           <script src="assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+   
+           <!-- Datatable init js -->
+           <script src="assets/js/pages/datatables.init.js"></script> 
+ 
+           <script src="js/registros.js" ></script>
    
 <script>
     fetch('api/session/session.php', {
@@ -592,7 +478,6 @@
     });
 </script>
 
-    </script>
     <script>
         document.getElementById('cerrar').addEventListener('click', function() {
     // Llamar al script PHP para cerrar sesión
@@ -622,6 +507,9 @@
     });
 });
     </script>
+
+
+
     </body>
 
 </html>
