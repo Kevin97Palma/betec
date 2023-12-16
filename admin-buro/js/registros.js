@@ -20,7 +20,11 @@ $(document).ready(function() {
                     registro.cedula,
                     registro.nombre,
                     registro.celular,
-                    registro.correo
+                    registro.correo,
+                    registro.estado,
+                    // Agrega los botones en la nueva columna
+                    `<button type="button" class="btn btn-primary" onclick="abrirModal(${registro.id})">Editar</button>
+                     <button type="button" class="btn btn-danger" onclick="eliminarRegistro(${registro.id})">Eliminar</button>`
                 ]).draw();
             });
         }
@@ -30,3 +34,15 @@ $(document).ready(function() {
         console.error(error);
     });
 });
+
+// Función para abrir un modal
+function abrirModal(id) {
+    // Implementa la lógica para abrir el modal según el ID
+    console.log(`Abrir modal para el ID ${id}`);
+}
+
+// Función para eliminar un registro
+function eliminarRegistro(id) {
+    // Implementa la lógica para eliminar el registro según el ID
+    console.log(`Eliminar registro con ID ${id}`);
+}

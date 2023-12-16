@@ -5,7 +5,9 @@ session_start();
 
 
     // Consulta SQL para obtener los registros del menú
-    $sql = $pdo->query("SELECT id,cedula,nombre,celular,correo  FROM datos_personales;");
+    $sql = $pdo->query("SELECT dp.id, dp.cedula, dp.nombre, dp.celular, dp.correo, e.nombre_estado AS estado
+    FROM datos_personales dp
+    JOIN estados e ON dp.estado_id = e.id;");
 
     if (!$sql) {
         die('Error en la consulta SQL: ' . $pdo->errorInfo()[2]);
