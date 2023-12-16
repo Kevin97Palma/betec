@@ -72,10 +72,65 @@ function cargarDatos(estadoId) {
         console.error('Error al obtener datos:', error);
     });
 }
-// Función para abrir un modal
+
+// Función para abrir un modal y cargar datos desde la API
 function abrirModal(id) {
-    // Implementa la lógica para abrir el modal según el ID
-    console.log(`Abrir modal para el ID ${id}`);
+    // Construye la URL de la API con el ID proporcionado
+    var apiUrl = `./api/modal/editar.php?id=${id}`;
+
+    // Muestra la solicitud que se enviará a la API
+    console.log(`Solicitud a la API: ${apiUrl}`);
+
+    // Realiza la solicitud a la API
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        // Muestra la respuesta de la API
+        console.log('Respuesta de la API:', response);
+        return response.json();
+    })
+    .then(data => {
+        // Muestra los datos devueltos por la API
+        console.log('Datos recibidos:', data);
+
+        // Llena el modal con los datos recibidos
+        llenarModal(data);
+        
+        // Abre el modal
+        $('#myModal').modal('show');
+    })
+    .catch(error => {
+        // Muestra errores en la consola
+        console.error('Error al obtener datos:', error);
+    });
+}
+
+// Función para llenar el contenido del modal con datos
+function llenarModal(data) {
+    // Modifica el contenido del modal según los datos recibidos
+    $('#myModalLabel').text(data.registros[0].nombre); // Cambia el título del modal
+
+    // Construye el contenido del cuerpo del modal
+    var modalContent = `
+        <p>ID: ${data.registros[0].id}</p>
+        <p>Cédula: ${data.registros[0].cedula}</p>
+        <p>Correo: ${data.registros[0].correo}</p>
+        <p>Estado: ${data.registros[0].nombre_estado}</p>
+        <p>Fecha de Creación: ${data.registros[0].created_at}</p>
+        <p>Código TR: ${data.registros[0].codigoTr}</p>
+        <p>Banco: ${data.registros[0].banco}</p>
+        <!-- Agrega más campos según tus necesidades -->
+        <p>Imagen Cédula Anverso: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_anverso}" target="_blank">Ver Comprobante</a></p>
+        <p>Imagen Cédula Reverso: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_cedula_reverso}" target="_blank">Ver Comprobante</a></p>
+        <p>Comprobante de Pago: <a href="./../form/api/doc/${data.registros[0].cedula}/${data.registros[0].ruta_comprobante_pago}" target="_blank">Ver Comprobante</a></p>
+    `;
+
+    // Llena el contenido del cuerpo del modal
+    $('.modal-body').html(modalContent);
 }
 
 // Función para eliminar un registro
