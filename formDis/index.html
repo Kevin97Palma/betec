@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>betec</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/ico.png">
+
+        <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <div class="main-content">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <!-- start page title -->
+                        
+                        <!-- end page title -->
+
+                        
+                    <div class="row">
+                        
+                        <div class="col-lg-12">
+                                    <div class="">
+                                        <img src="assets/images/2.png" class="img-fluid" alt="Responsive image">
+                                    </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Formulario</h4>
+                                    <p class="card-title-desc">Llena la información del registro para poder solicitar tu buro de crédito</p>
+
+                                    <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
+                                        <h3>Datos Personales</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <label for="cedula"
+                                                            class="col-lg-3 col-form-label">Cédula <a href="#" id="getRuc"><i class="fa fa-search"></i></a></label>
+                                                        <div class="col-lg-9">
+                                                            <input maxlength="10" id="cedula" name="cedula"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label for="nombre"
+                                                            class="col-lg-3 col-form-label">Nombres</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="nombre" name="nombre"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        <label for="celular"
+                                                            class="col-lg-3 col-form-label">Celular</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="celular" name="celular"
+                                                                type="text" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label for="correo"
+                                                            class="col-lg-3 col-form-label">Correo</label>
+                                                        <div class="col-lg-9">
+                                                            <input id="correo" 
+                                                                name="correo" type="text"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         
+                                    
+
+                                            <div class="row">
+                                                <div class="p-12">
+                                                <div class="col-lg-12">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input  type="checkbox" class="custom-control-input"
+                                                            id="customCheck1">
+                                                        <label class="custom-control-label text-start" for="customCheck1">Certifico ser el titular de la información que voy a suministrar. Se requerirá una fotografía de la Cédula de Identidad para verificar la titularidad de la información proporcionada. Soy consciente de que este formulario registrará las direcciones IP de envío como respaldo </label>
+                                                  
+                                                    </div>
+                                                </div>
+                                               
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <h3>Documentos</h3>
+                                        <fieldset>
+                                            <div class="row">   
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-12 col-form-label text-center">Verificación de identidad </label>
+                                                        <div class="col-lg-12">
+                                                            <p class="">
+                                                                Para confirmar tu identidad y acceder a tu historial crediticio con el propósito de realizar un Análisis de Crédito en Buró Ecuador, te solicitamos que subas una fotografía de ambos lados de tu cédula de identidad.
+                                                            </p>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">   
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-4 col-form-label">Imagen de referencia para foto cedula anverso</label>
+                                                        <div class="col-lg-8">
+                                                            <img class="img-thumbnail" alt="200x300" width="300" src="img/1.png" data-holder-rendered="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                       
+                                                            <div class="form-group">
+                                                                <label for="cedula1">Carga aqui archivo .jpg .png</label>
+                                                                <input type="file" name="cedula1" id="cedula1" accept=".jpg , .png " >
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            <div class="row">   
+                                                <div class="col-md-8">
+                                                    <div class="form-group row">
+                                                        <label 
+                                                            class="col-lg-4 col-form-label">Imagen de referencia para foto cedula reverso</label>
+                                                        <div class="col-lg-8">
+                                                            <img class="img-thumbnail" alt="200x300" width="300" src="img/2.png" data-holder-rendered="true">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group row">
+                                                        
+                                                            <div class="form-group">
+                                                                <label for="cedula2">Carga aqui archivo .jpg .png</label>
+                                                                <input id="cedula2" name="cedula2" type="file" accept=".jpg , .png " >
+                                                            </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+
+                                       
+
+                                        </fieldset>
+                                        <h3>Pago</h3>
+                                        <fieldset>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="transaccion" class="col-lg-3 col-form-label">N° Transaccion
+                                                        </label>
+                                                        <div class="col-lg-9">
+                                                            <input id="transaccion" name="transaccion" type="text"
+                                                                class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label for="banco"
+                                                            class="col-lg-3 col-form-label">Banco</label>
+                                                        <div class="col-lg-9">
+                                                            <select id="banco" name="banco"
+                                                                class="form-control">
+                                                                <option value="">--Escoge un banco--</option>
+                                                                <option value="BANCO PICHINCHA">BANCO PICHINCHA</option>
+                                                                <option value="BANCO AUSTRO">BANCO AUSTRO</option>
+                                                                <option value="BANCO PACIFICO">BANCO PACIFICO</option>
+                                                                <option value="BANCO PRODUBANCO">BANCO PRODUBANCO</option>
+                                                                <option value="BANCO INTERNACIONAL">BANCO INTERNACIONAL</option>
+                                                                <option value="BANCO GUAYAQUIL">BANCO GUAYAQUIL</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <label for="pago">Carga aqui comprabante de pago .pdf .jpg .png  </label> 
+                                                        
+                                                        <input id="pago" name="pago" type="file"  accept=".jpg , .png , .pdf"  >
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <h3>Confirmacion de identidad                                        </h3>
+                                        <fieldset>
+                                            
+                                            <div class="p-3">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck2">
+                                                    <label class="custom-control-label" for="customCheck2">Acepto los términos y condiciones de la plataforma Buró Ecuador</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="p-3">
+                                                <div id="authorizationCheckboxDiv" class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck3">
+                                                    <label class="custom-control-label" for="customCheck3">Doy la autorización sobre el tratamiento de mis datos.</label>
+                                                </div>
+                                            </div>
+                                            <div id="authorizationDetails" style="display: none;">
+                                                <textarea id="textarea" class="form-control" maxlength="225" rows="3"
+                                                placeholder="" readonly>
+                        
+                                            </textarea>
+                                               
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                
+                
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                © <script>document.write(new Date().getFullYear())</script> Betec<span class="d-none d-sm-inline-block"> </span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title px-3 py-4">
+                    <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                    <h5 class="m-0">Settings</h5>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+                        <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" 
+                            data-appStyle="assets/css/app-dark.min.css" />
+                        <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-5">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
+                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <a href="https://1.envato.market/grNDB" class="btn btn-primary btn-block mt-3" target="_blank"><i class="mdi mdi-cart mr-1"></i> Purchase Now</a>
+
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+     
+
+          <!-- JAVASCRIPT -->
+          <script src="assets/libs/jquery/jquery.min.js"></script>
+          <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+          <script src="assets/libs/simplebar/simplebar.min.js"></script>
+          <script src="assets/libs/node-waves/waves.min.js"></script>
+  
+   <!-- Sweet Alerts js -->
+   <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+   <!-- Sweet alert init js-->
+   <script src="assets/js/pages/sweet-alerts.init.js"></script>
+   
+          <script src="assets/libs/select2/js/select2.min.js"></script>
+          <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+          <script src="assets/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+          <script src="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+          <script src="assets/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js"></script>
+          <script src="assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+          <!-- form wizard -->
+          <script src="assets/libs/jquery-steps/build/jquery.steps.js"></script>
+  
+          <!-- form wizard init -->
+          <script src="assets/js/pages/form-wizard.init.js"></script>
+
+         
+
+  
+          <script src="assets/js/pages/form-advanced.init.js"></script>
+
+          <script src="assets/js/app.js"></script>
+        
+          <script>
+            $(document).ready(function() {
+        // Manejar el evento click del ícono de búsqueda
+        document.getElementById("getRuc").addEventListener("click", function () {
+            // Obtiene el valor de la cédula desde el input
+            var cedula = document.getElementById("cedula").value;
+
+            // Construye la URL de la API con la cédula
+            var api_url = "https://begroupec.info/api-cedula/consultaCedula.php?cedula=" + cedula;
+
+            // Realiza la consulta a la API
+            fetch(api_url)
+                .then(response => response.json())
+                .then(data => {
+                    // Guarda los datos en variables
+                    var identificacion = data.identificacion;
+                    var razonsocial = data.razonsocial;
+
+                    // Asigna el valor al input con el id "nombre"
+                    document.getElementById("nombre").value = razonsocial;
+            
+                })
+                .catch(error => console.error("Error al realizar la consulta a la API:", error));
+        });
+    });
+    
+           </script>
+            
+            <script>
+                $(document).ready(function () {
+                    var form = $("#form-horizontal");
+            
+                    // Escuchar cambios en el checkbox
+                    $("#customCheck3").on("change", function () {
+                        var authorizationDetails = $("#authorizationDetails");
+            
+                        if ($(this).is(":checked")) {
+                            var cedula = $('#cedula').val();
+                            var nombre = $('#nombre').val();
+                            var celular = $('#celular').val();
+                            var correo = $('#correo').val();
+            
+                            
+                            // Asignar los valores al textarea en el div authorizationDetails
+                            $("#textarea").val(`Yo, ${nombre}, portador del documento de identidad número ${cedula}, por medio del presente documento, declaro de manera libre, expresa y voluntaria que otorgo mi autorización de forma clara, específica e irrevocable a la plataforma Buró Ecuador para que acceda, utilice y procese mi información crediticia con el único y exclusivo propósito de realizar un análisis detallado de crédito basado en mi historial financiero.
+
+Reconozco y afirmo ser el titular legítimo de la información suministrada a la Betec y tengo plena consciencia de que mi dirección IP será registrada y conservada por motivos de seguridad y trazabilidad.
+
+Asimismo, autorizo y doy mi consentimiento para que se me remita una copia digital de la presente autorización, donde conste el nombre legal de la persona natural o jurídica que efectuará la consulta de mi información crediticia, a la dirección de correo electrónico ${correo}. Esta medida tiene la finalidad de mantener una constancia fehaciente de mi aprobación y consentimiento.
+
+Me hago plenamente responsable de la veracidad, exactitud y vigencia de los datos aportados en este proceso, eximiendo a la Betec de cualquier responsabilidad derivada de la inexactitud o falsedad de la información proporcionada.`);
+            
+                            authorizationDetails.show();
+                        } else {
+                            authorizationDetails.hide();
+                        }
+                    });
+                });
+            </script>  
+       
+    </body>
+</html>
