@@ -46,14 +46,23 @@ if ($sql->execute()) {
 
     // Asignar los valores a variables individuales
     $id = $registro['id'];
+    $cedula = $registro['cedula'];
+    $nombre = $registro['nombre'];
+    $celular = $registro['celular'];
+    $correo = $registro['correo'];
+    $created_at = $registro['created_at'];
+    $codigoTr = $registro['codigoTr'];
+    $banco = $registro['banco'];
+    $nombre_estado = $registro['nombre_estado'];
+    $ruta_cedula_anverso = $registro['ruta_cedula_anverso'];
+    $ruta_cedula_reverso = $registro['ruta_cedula_reverso'];
+    $ruta_comprobante_pago = $registro['ruta_comprobante_pago'];
 
-    // Imprimir valores para depuración
-    echo "idR recibido: $idR\n";
-    echo "id del registro obtenido: $id\n";
-
+    $Cli = substr($celular, 1);
+$Clie = '593' . $Cli;
     // Actualizar el campo "ruta_comprobante_pago" en la tabla "archivos" con el archivo buro
     $sqlUpdate = "UPDATE archivos 
-                  SET buro = :archivoAdjunto, 
+                  SET ruta_comprobante_pago = :archivoAdjunto, 
                       updated_at = NOW() 
                   WHERE cedula_id = :idR";
 
@@ -64,27 +73,65 @@ if ($sql->execute()) {
     $updateStatement->bindParam(':archivoAdjunto', $archivoAdjunto, PDO::PARAM_STR);
     $updateStatement->bindParam(':idR', $idR, PDO::PARAM_INT);
 
-    // Imprimir valores para depuración
-    echo "archivoAdjunto: $archivoAdjunto\n";
-
     // Ejecutar la actualización
-    if ($updateStatement->execute()) {
-        // Devolver la información
-        $response = [
-            "id" => $_SESSION["id"],
-            "idRegistro" => $id,
-            // Agregar otras variables necesarias para la respuesta
-        ];
+    $updateStatement->execute();
 
-        echo json_encode($response);
+
+    // Construye el JSON para enviar el mensaje con el archivo adjunto
+    $json_data = array(
+        'ruc' => '1724718158001',
+        'image' => '',
+        'message' => '*MENSAJE AUTOMÁTICO*
+*NO CONTESTAR* 
+La firma del cliente '.$nombre.' con número de cédula: '.$cedula.'  se ha generado con éxito. Para realizar la descarga de la firma electrónica, ingrese al siguiente enlace 
+        
+*Portal de descarga* 
+https://tribufirmas.com/descarga-certificado/
+        
+*Las instrucciones de la descarga están en el siguiente videotutorial* 
+https://youtu.be/bi7tBlSC50U',
+        'document' => $archivoAdjunto,  // Ruta del PDF adjunto
+        'cellphone' => $Clie,
+        'from' => 'Envio Buro',
+        'typeMessage' => '0',  // Tipo 0 para archivo adjunto
+        'idWhatsapp' => '7afBvkqzaDrS2V20bKOjmjU22',
+        'title' => 'Envio'
+    );
+
+    $json_string = json_encode($json_data);
+
+    $ch = curl_init();
+
+    // Configura la URL de la nueva API
+    $url = 'http://194.163.136.238:9090/api-whatsapp/bridge.php';
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $json_string);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+    $result = curl_exec($ch);
+
+    if ($result) {
+        if (strpos($result, 'success') !== false) {
+            echo "Mensaje enviado correctamente para ID: " . $Clie . PHP_EOL;
+            // Imprime la respuesta de la API
+            echo "Respuesta de la API: " . $result . PHP_EOL;
+        } elseif (strpos($result, 'error') !== false) {
+            echo "Mensaje NO enviado para ID: " . $Clie . PHP_EOL;
+            // $telefonosNoEnviados[] = $nombre; // Agrega el teléfono al array
+        }
     } else {
-        // Si hay un error en la actualización, devuelve un mensaje de error
-        http_response_code(500);
-        echo json_encode(["message" => "Error en la actualización SQL"]);
+        echo "Error en la solicitud para ID: " . $Clie . PHP_EOL;
+        // $telefonosNoEnviados[] = $nombre; // Agrega el teléfono al array
     }
+
+    curl_close($ch);
+
 } else {
     // Si hay un error en la consulta, devuelve un mensaje de error
     http_response_code(500);
     echo json_encode(["message" => "Error en la consulta SQL"]);
 }
-?>
+
+
