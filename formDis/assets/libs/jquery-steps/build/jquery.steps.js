@@ -1950,6 +1950,7 @@ var pagoFile = document.getElementById("pago").files[0];
 var customCheck1 = document.getElementById("customCheck1").checked;
 var customCheck2 = document.getElementById("customCheck2").checked;
 var customCheck3 = document.getElementById("customCheck3").checked;
+var disC = document.getElementById("disC").value; 
 
  
 // Array para almacenar los campos que faltan
@@ -1966,7 +1967,7 @@ if (!pagoFile) camposFaltantes.push("Comprobante de Pago");
 if (!customCheck1) camposFaltantes.push("Acepta que eres el titular de los datos");
 if (!customCheck2) camposFaltantes.push("Acepta Términos y Condiciones");
 if (!customCheck3) camposFaltantes.push("Acepta la autorización de Datos Personales");
-
+if (!disC) camposFaltantes.push("Coloca tu codigo de distribuidor");
 // Mensaje de error para campos obligatorios no llenos
 var errorMessage = "Por favor, completa los siguientes campos obligatorios: " + camposFaltantes.join(", ");
 
@@ -1988,6 +1989,7 @@ if (camposFaltantes.length > 0) {
     formData.append("customCheck1", customCheck1);
     formData.append("customCheck2", customCheck2);
     formData.append("customCheck3", customCheck3);
+    formData.append("disC", disC);
 
  // Imprimir los valores en la consola
  console.log("Cedula:", cedula);
@@ -2002,7 +2004,7 @@ if (camposFaltantes.length > 0) {
  console.log("CustomCheck1:", customCheck1);
  console.log("CustomCheck2:", customCheck2);
  console.log("CustomCheck3:", customCheck3);
-
+ console.log("disC:", disC);
     // Crear un objeto XMLHttpRequest
     var xhr = new XMLHttpRequest();
 

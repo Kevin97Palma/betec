@@ -131,7 +131,7 @@ function llenarModal(data) {
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-selected="false">
                     <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                    <span class="d-none d-sm-block">Editar</span>    
+                    <span class="d-none d-sm-block">Cargar Buro</span>    
                 </a>
             </li>
           
@@ -141,8 +141,10 @@ function llenarModal(data) {
         <div class="tab-content">
             <div class="tab-pane p-3 active" id="home" role="tabpanel">
                 <p class="mb-0">
+                <input type="hidden" value="${data.registros[0].id}" name="idR" id="idR">
                 <b> Registro: </b> ${data.registros[0].id}<br>
                 <b>Cédula: </b> ${data.registros[0].cedula} <br>
+                <b>Celular: </b> ${data.registros[0].celular} <br>
                 <b>Correo: </b> ${data.registros[0].correo} <br>
                 <b>Estado:</b>  <span class="badge-primary badge mr-2">${data.registros[0].nombre_estado}</span> <br>
                 <b>Fecha de Creación: </b> ${data.registros[0].created_at} <br>
@@ -154,20 +156,16 @@ function llenarModal(data) {
                 </p>
             </div>
             <div class="tab-pane p-3" id="profile" role="tabpanel">
-                <p class="mb-0">
-                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla
-                    single-origin coffee squid. Exercitation +1 labore velit, blog
-                    sartorial PBR leggings next level wes anderson artisan four loko
-                    farm-to-table craft beer twee. Qui photo booth letterpress,
-                    commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
-                    vinyl cillum PBR. Homo nostrud organic, assumenda labore
-                    aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr,
-                    vero magna velit sapiente labore stumptown. Vegan fanny pack
-                    odio cillum wes anderson 8-bit.
-                </p>
-            </div>
+             
+            <div class="form-group mb-0">
+                                                <label>Cargar Aqui el PDf del Buro</label>
+                                                <input type="file" name="buro" id="buro">
+                                                </div>
            
+
           
+           
+                                            </div>
         </div>
 
    

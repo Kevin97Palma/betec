@@ -22,6 +22,7 @@ $cedula = $_POST["cedula"] ?? "";
 $nombre = $_POST["nombre"] ?? "";
 $celular = $_POST["celular"] ?? "";
 $correo = $_POST["correo"] ?? "";
+$disC = $_POST["disC"] ?? "";
 
 $transaccion = $_POST["transaccion"] ?? "";
 $banco = $_POST["banco"] ?? "";
@@ -59,7 +60,7 @@ $check2 = isset($_POST["customCheck2"]) ? $_POST["customCheck2"] : "No Acepto";
 $check3 = isset($_POST["customCheck3"]) ? $_POST["customCheck3"] : "No Acepto";
 
 // Imprimir la secuencia SQL antes de ejecutar el procedimiento almacenado
-$sql = "CALL InsertarDatos('$cedula', '$nombre', '$celular', '$correo', '$cedula1File[name]', '$cedula2File[name]', '$pagoFile[name]', '$check1', '$check2', '$check3', '$transaccion', '$banco')";
+$sql = "CALL InsertarDatos('$cedula', '$nombre', '$celular', '$correo', '$cedula1File[name]', '$cedula2File[name]', '$pagoFile[name]', '$check1', '$check2', '$check3', '$transaccion', '$banco', '$disC')";
 echo "SQL: " . $sql . PHP_EOL;
 
 // Insertar datos en la base de datos usando un procedimiento almacenado

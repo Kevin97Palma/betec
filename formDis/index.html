@@ -221,6 +221,24 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <div class="row">
+                                                
+                                                <div class="col-md-12">
+                                                    <div class="form-group row">
+                                                        <input type="hidden" name="vendedor" id="vendedor" >
+                                                        <label>CODIGO VENDEDOR *</label>
+            <label id="emi_vendedor-error" class="error" for="emi_vendedor">No existe este codigo de vendedor.</label>
+            <label id="emi_vendedor-ok" for="emi_vendedor-ok"> </label>
+                                                            <input name="disC" id="disC" type="text" class="form-control"
+            
+                                                                placeholder="CODIGO DE VENTA" 
+            
+                                                                minlength="7" maxlength="10" required="">   </div>
+                                                </div>
+                                            </div>
+
                                         </fieldset>
                                         <h3>Confirmacion de identidad                                        </h3>
                                         <fieldset>
@@ -424,6 +442,37 @@ Me hago plenamente responsable de la veracidad, exactitud y vigencia de los dato
                     });
                 });
             </script>  
+
+            <script>
+    jQuery(document).ready(function($) {
+        $("#disC").on("input", function () {
+    var id = this.value;
+    var url1 =  "appKAP/getLicenciaOrel.php?id=" + id;
+    $.ajax({
+        url: url1,
+        accepts: "application/json",
+        crossDomain: true,
+        dataType: 'json',
+    }).done(function (resp) {
+        console.log(resp);
+        if (resp.licencia === 'NO') {
+            $('#emi_vendedor-error').show();
+            $('#emi_vendedor-ok').hide();
+            $('#vendedor').val('NO');
+            console.log("1");
+        } else {
+            $('#emi_vendedor-error').hide();
+            $("#emi_vendedor-ok").html(' Distribuidor: ' + resp.licencia);
+            $('#emi_vendedor-ok').show();
+            $('#vendedor').val('OK');
+            console.log("2");
+        }
+    });
+});
+
+});
+
+            </script>
        
     </body>
 </html>
